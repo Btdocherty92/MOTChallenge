@@ -1,0 +1,23 @@
+{
+  "name": "motchallenge",
+  "version": "1.0.0",
+  "description": "MOT Challenge Sandbox",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "cy:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Btdocherty92/MOTChallenge.git"
+  },
+  "author": "Ben Docherty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Btdocherty92/MOTChallenge/issues"
+  },
+  "homepage": "https://github.com/Btdocherty92/MOTChallenge#readme",
+  "devDependencies": {
+    "cypress": "^10.7.0"
+  }
+}
