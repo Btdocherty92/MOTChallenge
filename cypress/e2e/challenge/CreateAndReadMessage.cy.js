@@ -1,8 +1,6 @@
 /// <reference types="cypress" />
 
-import Home from "../Pages/Home"
-import Login from "../Pages/Login"
-import Admin from "../Pages/Admin"
+import Manager from "../Pages/Manager"
 
 // Test data
 const details = {
@@ -13,29 +11,27 @@ const details = {
     message: 'This is a test message longer than 20 characters'
 }
 
-// Page declerations
-const home = new Home()
-const login = new Login()
-const admin = new Admin()
+// Declare page manager
+const manager = new Manager()
 
 describe('Create and read message', () => {
 
-    it.only('Send message', () => {
+    it('Send message', () => {
         // Go to homepage and send a new message
-        home.navigate()
-        home.createMessage(details.name, details.email, details.subject, details.number, details.message)
-        home.submit()
+        manager.home.navigate()
+        manager.home.createMessage(details.name, details.email, details.subject, details.number, details.message)
+        manager.home.submit()
     })
 
     it('Check message', ()=>{
         // Go to admin site and login
-        login.navigate()
-        login.enterDetails('admin', 'password')
-        login.submit()
+        manager.login.navigate()
+        manager.login.enterDetails('admin', 'password')
+        manager.login.submit()
 
         // Check message details
-        admin.openMessages()
-        admin.openMessage(details.subject)
-        admin.checkMessage(details.message)
+        manager.admin.openMessages()
+        manager.admin.openMessage(details.subject)
+        manager.admin.checkMessage(details.message)
     })
 })
