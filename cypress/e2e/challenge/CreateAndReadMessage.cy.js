@@ -4,6 +4,7 @@ import Home from "../Pages/Home"
 import Login from "../Pages/Login"
 import Admin from "../Pages/Admin"
 
+// Test data
 const details = {
     name: 'Joe Bloggs',
     email: 'jbloggs@fakeemail.com',
@@ -12,11 +13,14 @@ const details = {
     message: 'This is a test message longer than 20 characters'
 }
 
+// Page declerations
+const home = new Home()
+const login = new Login()
+const admin = new Admin()
+
 describe('Create and read message', () => {
 
-    it('Send message', () => {
-        const home = new Home()
-
+    it.only('Send message', () => {
         // Go to homepage and send a new message
         home.navigate()
         home.createMessage(details.name, details.email, details.subject, details.number, details.message)
@@ -24,9 +28,6 @@ describe('Create and read message', () => {
     })
 
     it('Check message', ()=>{
-        const login = new Login()
-        const admin = new Admin()
-
         // Go to admin site and login
         login.navigate()
         login.enterDetails('admin', 'password')

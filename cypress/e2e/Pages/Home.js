@@ -1,4 +1,5 @@
 class Home {
+    
     navigate(){
         cy.visit('https://automationintesting.online/')
     }

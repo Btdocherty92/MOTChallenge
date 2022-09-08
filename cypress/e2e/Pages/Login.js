@@ -1,4 +1,5 @@
 class Login {
+
     navigate() {
         // Add headers as workaround for Axios error
         cy.visit(('https://automationintesting.online/#/admin'), {
@@ -6,10 +7,7 @@ class Login {
                 "Accept": "application/json, text/plain, */*",
                 "User-Agent": "axios/0.27.2"
             }
-        })
-
-        // Intercept 403 Axios error
-        cy.intercept('POST', '/auth/validate', {
+        }).intercept('POST', '/auth/validate', {
             statusCode: 201
         })
     }

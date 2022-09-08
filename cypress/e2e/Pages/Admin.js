@@ -1,4 +1,5 @@
 class Admin {
+    
     openMessages(){
         cy.get('a[href*=messages]').click()
     }
